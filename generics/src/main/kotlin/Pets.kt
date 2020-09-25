@@ -7,11 +7,11 @@ class Dog(name: String) : Pet(name)
 class Fish(name: String) : Pet(name)
 
 class Contest<T: Pet> {
-    val scores: MutableMap<T, Int> = mutableMapOf()
+    private val scores: MutableMap<T, Int> = mutableMapOf()
 
     fun addScore(t: T, score: Int) {
         if(score >= 0) {
-            scores.put(t, score)
+            scores[t] = score
         }
     }
 
